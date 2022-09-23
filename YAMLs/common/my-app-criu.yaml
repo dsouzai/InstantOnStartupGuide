@@ -24,7 +24,7 @@ spec:
             name: ns-last-pid-mount
           securityContext:
             capabilities:
-              add: [ "SYS_TIME", "DAC_OVERRIDE", "CHOWN", "SETPCAP", "SETGID", "AUDIT_CONTROL", "DAC_READ_SEARCH", "NET_ADMIN", "SYS_CHROOT", "SYS_PTRACE", "FOWNER", "KILL", "FSETID", "SYS_RESOURCE", "SETUID", "SYS_ADMIN" ]
+              add: [ "CHECKPOINT_RESTORE", "NET_ADMIN", "SYS_PTRACE" ]
       volumes:
       - name: ns-last-pid-mount
         hostPath:
