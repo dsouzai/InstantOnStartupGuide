@@ -112,8 +112,7 @@ RUN cd /tmp \
 FROM base
 COPY --from=criu-builder /tmp/criu-3.16.1/usr/local /usr/local
 # Set CRIU capabilities.
-RUN setcap cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_net_admin,cap_sys_chroot,cap_sys_ptrace,cap_sys_admin,cap_sys_resource,cap_sys_time,cap_audit_control=eip /usr/local/sbin/criu
-#RUN setcap cap_checkpoint_restore,cap_sys_ptrace,cap_net_admin=eip /usr/local/sbin/criu
+RUN setcap cap_checkpoint_restore,cap_sys_ptrace,cap_net_admin=eip /usr/local/sbin/criu
 
 # Run ldconfig to discover newly installed shared libraries.
 RUN for dir in lib lib64 lib/x86_64-linux-gnu ; do echo /usr/local/$dir ; done > /etc/ld.so.conf.d/usr-local.conf \
