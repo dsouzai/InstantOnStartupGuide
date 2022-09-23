@@ -16,4 +16,4 @@
 # limitations under the License.
 ###############################################################################
 
-podman run --rm --cap-add=CHECKPOINT_RESTORE --cap-add=SYS_PTRACE --cap-add=NET_ADMIN -v /proc/sys/kernel/ns_last_pid:/proc/sys/kernel/ns_last_pid --security-opt seccomp=criuseccompprofile.json -it restorerun 
+podman run --rm --cap-add=CHECKPOINT_RESTORE --cap-add=SYS_PTRACE --cap-add=NET_ADMIN -v /proc/sys/kernel/ns_last_pid:/proc/sys/kernel/ns_last_pid --security-opt seccomp=criuseccompprofile.json -it localhost/restorerun 

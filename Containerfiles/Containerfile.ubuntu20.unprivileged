@@ -14,9 +14,12 @@
 # limitations under the License.
 ###############################################################################
 
-FROM ubuntu:20.04 AS base
+FROM ubuntu:22.04 AS base
 
 # Install required OS tools.
+
+RUN apt-get update \
+ && apt-get install -qq -y --no-install-recommends gpg gpg-agent
 
 RUN apt-get update \
  && apt-get install -qq -y --no-install-recommends \
@@ -34,8 +37,8 @@ RUN apt-get update \
     curl \
     dumb-init \
     file \
-    g++-7 \
-    gcc-7 \
+    g++ \
+    gcc \
     gdb \
     git \
     libbsd0 \
